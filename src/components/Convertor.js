@@ -83,7 +83,7 @@ function Convertor() {
   return (
     <Grid container spacing={3}>  
     <Box ml={7}  borderRadius={16} {...rightBoxDefaultProps}>
-<Box mt={4} fontWeight="fontWeightBold" >
+<Box mt={4} display="flex"   alignItems="center" p={2}   justifyContent="space-evenly"  fontWeight="fontWeightBold" >
   <ComputerIcon/>
   <PhoneIphoneicon/>
 </Box>
