@@ -31,6 +31,14 @@ display:"content"
   
 }));
 
+const navbarDefaultProps = {
+  borderColor: 'text.primary',
+  m: 3,
+  border: 10,
+  style: { width: '30rem', height: '10rem' },
+
+};
+
 const defaultProps = {
   borderColor: 'text.primary',
   m: 1,
@@ -48,10 +56,10 @@ function Navbar() {
   const classes = useStyles();
 
   return (
-     <Grid container  spacing={1}>
-    <AppBar position="static">
-      <Toolbar>
-        <Grid item xs={10} sm={10} lg={10} md={10}>
+     <Grid container              spacing={1}>
+    <AppBar position="fixed" style={{ borderBottom: "5px solid #3f51b5" , borderBottomLeftRadius:'25px', borderBottomRightRadius: '25px'}}>
+      <Toolbar >
+        <Grid item xs={10} sm={10} lg={10} md={10} >
         <Typography display="flex" variant="h6" className={classes.width}>
         CURRENY CONVERTOR PRO
         </Typography>

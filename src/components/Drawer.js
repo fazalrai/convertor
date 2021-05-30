@@ -48,7 +48,7 @@ export default function ClippedDrawer() {
   const isActive = (url)=>location.pathname === url ? classes.active : ''
  
   return (
-    <div className={classes.root}>
+    <div className={classes.root} width="100%">
 
       <Drawer
         className={classes.drawer}
@@ -57,6 +57,9 @@ export default function ClippedDrawer() {
           paper: classes.drawerPaper,
         }}
         elevation="16"
+        ModalProps={{
+          keepMounted: true,
+        }}
         
       >
 
@@ -98,6 +101,9 @@ export default function ClippedDrawer() {
         <ListItemText primary="Troubleshooting" />
    </ListItem> <ListItem button component={NavLink} to="/setup/videos">
         <ListItemText primary="Watch Setup Videos" />
+   </ListItem>
+  <ListItem button component={NavLink} to="/faqs">
+        <ListItemText primary="FAQ" />
    </ListItem>
         </div>
       </Drawer>

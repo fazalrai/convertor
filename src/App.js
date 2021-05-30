@@ -16,13 +16,28 @@ import PricingPreferences from './components/PricingPreferences';
 import CurrencyPreferences from "./components/CurrencyPreferences"
 import CartPageNotifications from './components/CartPageNotifications';
 import CustomizedSteppers  from './components/Stepper'
-
+import Grid from '@material-ui/core/Grid';
+import Faqs from './components/Faqs';
+import Dialog from "./components/DialogBox"
+import {useLocation} from 'react-router-dom'
+import Counter1 from './components/Counter1';
+const root= {
+  width: "100%"
+}
 function App() {
+const location=useLocation()
   return (
     <div  className="App">
+      <Counter1/>
+    {/* <Grid container>
+     
+   <Grid item xs={12} md={12}lg={12}>
       <Navbar/>
-      <ClippedDrawer/>
-      <CustomizedSteppers/>
+      </Grid>
+   <Grid item xs={12} md={2} lg={2}>
+        <ClippedDrawer/>
+        </Grid>    
+    {location.pathname ==="/faqs" ? " ":<CustomizedSteppers/>}
       <Switch>
       <Route
         exact
@@ -59,8 +74,19 @@ function App() {
         path="/cart/page/notifications"
         component={CartPageNotifications}
       />
+      <Route
+        exact
+        path="/faqs"
+        component={Faqs}
+      />
+      <Route
+        exact
+        path="/dialog"
+        component={Dialog}
+      />
       <Redirect to="/"/>
       </Switch>
+      </Grid> */}
     </div>
   );
 }

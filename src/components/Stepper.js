@@ -13,6 +13,8 @@ import VideoLabelIcon from '@material-ui/icons/VideoLabel';
 import StepConnector from '@material-ui/core/StepConnector';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { Box } from '@material-ui/core';
+import {Link} from 'react-router-dom'
 
 const QontoConnector = withStyles({
   alternativeLabel: {
@@ -43,6 +45,7 @@ const useQontoStepIconStyles = makeStyles({
     display: 'flex',
     height: 22,
     alignItems: 'center',
+    marginTop:'500px'
   },
   active: {
     color: '#784af4',
@@ -173,7 +176,7 @@ ColorlibStepIcon.propTypes = {
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
-    marginLeft :'120px'
+    marginLeft :'500px'
 
   },
   button: {
@@ -185,8 +188,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+function links(){
+return(<div>
+  <br>
+  </br>
+ <Link to="/store"> Go to Store </Link>
+</div>
+)
+
+}
+
 function getSteps() {
-  return ['install the App', 'Edit Money Format', "Switch 'ON' currency Bar", "Preview the curency bar on your store"];
+  return ['install the App',<><p>Edit Money Format</p>
+  <Link to = "/dialog">Go to store setting</Link> | <Link to = "/home">Verify Now</Link>
+  </> , "Switch 'ON' currency Bar", "Preview the curency bar on your store"];
 }
 
 function getStepContent(step) {
@@ -220,7 +235,7 @@ export default function CustomizedSteppers() {
   };
 
   return (
-    <div className={classes.root}>
+    <Box width="80%" mt={18}>
       <Stepper alternativeLabel activeStep={activeStep}>
         {steps.map((label) => (
           <Step key={label}>
@@ -228,6 +243,6 @@ export default function CustomizedSteppers() {
           </Step>
         ))}
       </Stepper>      
-    </div>
+    </Box>
   );
 }

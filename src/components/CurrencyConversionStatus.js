@@ -8,7 +8,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     marginLeft:'270px',
-    marginTop:'50px'
+    marginTop:'50px',
+    width:"80%",
   },
   paper: {
     padding: theme.spacing(2),
@@ -16,7 +17,8 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
   },
   textMargin:{
-    marginTop:'20px'
+    marginTop:'20px',
+    color:'#636363'
   },
   topLeftBox: {
  float:'left'
@@ -31,21 +33,28 @@ backgroundColor:"#ffffff"
     marginTop: '32px'
   }
 }));
+
+
 const defaultProps = {
   bgcolor : "#F0F0F0",
   borderColor: 'text.primary',
   m: 1,
   border: 1,
-  style: { width: '20rem', height: '13rem' },
+  style: { width: '20rem', height: '12rem' },
 };
 
-
+const childdefaultProps = {
+  bgcolor : "#F0F0F0",
+  m: 1,
+  style: { width: '18rem', height: '3rem' },
+};
 
 export default function CenteredGrid() {
   const classes = useStyles();
 const [toggle,setToggle] = React.useState(false)
   return (
-    <div className={classes.root}>
+
+     <div className={classes.root}> 
       <Grid container spacing={3}>
        <Box display="flex">
        <Grid className={classes.leftBox}  item sm={12} md={4} lg={3}>
@@ -65,15 +74,16 @@ location.
         color="primary"
         name="checkedB"
         inputProps={{ 'aria-label': 'primary checkbox' }}
-      /></Box>
+      />
+</Box>
+
 </Grid>
 
 <Grid item  md={9} sm={12} lg={9}>
 <Convertor/>
 </Grid>
 </Box>
-
-      </Grid>
-    </div>
+</Grid>
+</div>
   );
 }
